@@ -2,9 +2,12 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 var upload = multer({dest:'./uploads'});
+<<<<<<< HEAD
 
 var User = require('../models/user');
 
+=======
+>>>>>>> 8322a104dea9f17f2f775c54370426a57f5749b9
 /* GET users listing. */
 /*Same as /users/ because of path in app.js*/
 router.get('/', function(req, res, next) {
@@ -52,6 +55,7 @@ router.post('/register', upload.single('profileimage'),function(req, res, next) 
   			errors: errors
   		});
   	}else{
+<<<<<<< HEAD
   		var newUser = new User({
   			name: name,
   			email: email,
@@ -68,6 +72,9 @@ router.post('/register', upload.single('profileimage'),function(req, res, next) 
   		req.flash('success','You are now registered and can login');
   		res.location('/');
   		res.redirect('/');
+=======
+  		console.log('No Errors');
+>>>>>>> 8322a104dea9f17f2f775c54370426a57f5749b9
   	}
 
 });
